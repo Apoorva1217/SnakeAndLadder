@@ -14,8 +14,12 @@ namespace Snake_and_Ladder
             //Constants
             const int START_POSITION = 0;
             const int FINAL_POSITION = 100;
+	    int[] Array = new int[7];
 	    //Variable
             int positionOfPlayer = START_POSITION;
+            int count = 0;
+            int diceRoll = 0;
+
 			
 	    //The player rolls a die to get a number between 1 to 6
             Random random = new Random();
@@ -53,6 +57,27 @@ namespace Snake_and_Ladder
                         }
                         break;
                 }
+            }
+			
+	    //Repeat till the player reaches the winning position 100
+            while (positionOfPlayer != FINAL_POSITION || positionOfPlayer > FINAL_POSITION)
+            {
+                if (positionOfPlayer < START_POSITION)
+                {
+                    positionOfPlayer = START_POSITION;
+                    Console.WriteLine("Your current position is:" + positionOfPlayer);
+                }
+                else if(positionOfPlayer == FINAL_POSITION)
+                {
+                    Console.WriteLine("Your position is 100");
+                    Console.WriteLine("You Won the Game!");
+                }
+                else if(positionOfPlayer > FINAL_POSITION)
+                {
+                    positionOfPlayer = positionOfPlayer - diceNumber;
+                }
+                Array[count] = positionOfPlayer;
+                count=count+1;
             }
         }
     }

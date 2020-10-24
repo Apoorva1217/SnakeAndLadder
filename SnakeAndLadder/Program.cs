@@ -11,6 +11,11 @@ namespace Snake_and_Ladder
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to Snake and Ladder Game!");
+	    //Constants
+            const int START_POSITION = 0;
+            const int FINAL_POSITION = 100;
+	    //Variable
+            int positionOfPlayer = START_POSITION;
         }
     }
 }

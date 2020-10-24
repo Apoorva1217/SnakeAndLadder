@@ -19,7 +19,8 @@ namespace Snake_and_Ladder
             int positionOfPlayer = START_POSITION;
             int count = 0;
             int diceRoll = 0;
-
+	    int player1 = 0;
+	    int player2 = 0;
 			
 	    //The player rolls a die to get a number between 1 to 6
             Random random = new Random();
@@ -78,14 +79,22 @@ namespace Snake_and_Ladder
                 }
                 Array[count] = positionOfPlayer;
                 count=count+1;
+				turn = 0;
             }
 	    //Position after every die
             for(int positionOfBoard=0;positionOfBoard<diceRoll;positionOfBoard++)
             {
-                Console.WriteLine("Number of times dice roll:" + (positionOfBoard + 1));
-                Console.WriteLine("Position after every die roll:" + Array[positionOfBoard]);
+		if(turn == 0)
+		{
+			turn=1;
+			Console.WriteLine(Turn of Dice:"+(positionOfBoard+1)+"player1:positionOfPlayer"+Array[positionOfBoard]);
+		}
+		else
+		{
+			turn=0;
+			Console.WriteLine(Turn of Dice:"+(positionOfBoard+1)+"player2:positionOfPlayer"+Array[positionOfBoard]);
+		}
             }
-
         }
     }
 }

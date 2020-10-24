@@ -94,7 +94,17 @@ namespace Snake_and_Ladder
 			turn=0;
 			Console.WriteLine(Turn of Dice:"+(positionOfBoard+1)+"player2:positionOfPlayer"+Array[positionOfBoard]);
 		}
-            }
+	     }
+
+	     //play the game with 2 players
+	     if(player1 > player2)
+	     {
+	     	Console.WriteLine("Player 1 wins!");
+	     }
+             else
+	     {
+	     	Console.WriteLine("Player 2 wins!");
+	     }
         }
     }
 }

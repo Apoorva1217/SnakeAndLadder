@@ -21,6 +21,39 @@ namespace Snake_and_Ladder
             Random random = new Random();
             int diceNumber = random.Next(0, 7);
             Console.WriteLine("Number occured on Dice is:" + diceNumber);
+			
+	    //The player checks for an option
+            while (positionOfPlayer == FINAL_POSITION)
+            {
+                Random random1 = new Random();
+                int checkOption = random1.Next(3);
+                switch (checkOption)
+                {
+                    case 0:
+                        Console.WriteLine("No Play");
+                        Console.WriteLine("Current position is:" + diceNumber);
+                        break;
+                    case 1:
+                        Console.WriteLine("Ladder");
+                        positionOfPlayer = positionOfPlayer + diceNumber;
+                        Console.WriteLine("Current position is:" + positionOfPlayer);
+                        break;
+                    case 2:
+                        Console.WriteLine("Snake");
+                        int result = positionOfPlayer - diceNumber;
+                        if (result > 0)
+                        {
+                            positionOfPlayer = positionOfPlayer - diceNumber;
+                            Console.WriteLine("Current position is:" + positionOfPlayer);
+                        }
+                        else
+                        {
+                            //positionOfPlayer = positionOfPlayer;
+                            Console.WriteLine("Current position is:" + positionOfPlayer);
+                        }
+                        break;
+                }
+            }
         }
     }
 }

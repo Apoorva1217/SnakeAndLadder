@@ -79,6 +79,13 @@ namespace Snake_and_Ladder
                 Array[count] = positionOfPlayer;
                 count=count+1;
             }
+	    //Position after every die
+            for(int positionOfBoard=0;positionOfBoard<diceRoll;positionOfBoard++)
+            {
+                Console.WriteLine("Number of times dice roll:" + (positionOfBoard + 1));
+                Console.WriteLine("Position after every die roll:" + Array[positionOfBoard]);
+            }
+
         }
     }
 }
